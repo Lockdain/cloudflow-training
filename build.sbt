@@ -1,7 +1,7 @@
 import sbt.Keys._
 import sbt._
 
-val akkaHttpSpayJson = "com.typesafe.akka" %% "akka-http-spray-json" % "10.1.10"
+val akkaHttpSprayJson = "com.typesafe.akka" %% "akka-http-spray-json" % "10.1.10"
 val log4j2Version    = "2.13.0"
 val log4jApi         = "org.apache.logging.log4j" % "log4j-api" % log4j2Version
 val log4jSlf4j       = "org.apache.logging.log4j" % "log4j-slf4j-impl" % log4j2Version
@@ -14,21 +14,111 @@ lazy val root =
   Project(id = "cloudflow-training", base = file("."))
     .settings(
       name := "cloudflow-training",
+      skip in publish := true,
       version := "0.1"
     )
   .withId("cloudflow-training")
   .settings(commonSettings)
   .aggregate(
-    //Aggregate
+      cloudflowPipeline,
+      paymentHttpIngress,
+      paymentValidator,
+      paymentInvalidLogger,
+      paymentWindowingFlink,
+      paymentCollectorSpark,
+      datamodel
   )
 
-lazy val paymentHttpIngress = appModule("PaymentHttpIngress")
+lazy val cloudflowPipeline = appModule("cloudflow-pipeline")
   .enablePlugins(CloudflowApplicationPlugin)
   .settings(commonSettings)
   .settings(
-    name := "PaymentHttpIngress"
+    name := "cloudflow-pipeline"
   )
-  .dependsOn()
+  .dependsOn(
+    paymentHttpIngress,
+    paymentValidator,
+    paymentInvalidLogger,
+    paymentWindowingFlink,
+    paymentCollectorSpark)
+
+lazy val paymentHttpIngress = appModule("payment-http-ingress")
+  .enablePlugins(CloudflowAkkaStreamsLibraryPlugin)
+  .settings(commonSettings)
+  .settings(
+    name := "payment-http-ingress",
+    libraryDependencies ++= Seq(
+      akkaHttpSprayJson,
+      log4jApi,
+      log4jSlf4j,
+      log4jCore,
+      disruptor,
+      scalaTest
+    )
+  )
+  .dependsOn(datamodel)
+
+
+lazy val paymentValidator = appModule("payment-validator")
+  .enablePlugins(CloudflowAkkaStreamsLibraryPlugin)
+  .settings(commonSettings)
+  .settings(
+name := "payment-validator",
+libraryDependencies ++= Seq(
+log4jApi,
+log4jSlf4j,
+log4jCore,
+disruptor,
+scalaTest
+)
+)
+  .dependsOn(datamodel)
+
+lazy val paymentInvalidLogger = appModule("payment-invalid-logger")
+  .enablePlugins(CloudflowAkkaStreamsLibraryPlugin)
+  .settings(commonSettings)
+  .settings(
+    name := "payment-invalid-logger",
+    libraryDependencies ++= Seq(
+      log4jApi,
+      log4jSlf4j,
+      log4jCore,
+      disruptor,
+      scalaTest
+    )
+  )
+  .dependsOn(datamodel)
+
+lazy val paymentWindowingFlink = appModule("payment-windowing-flink")
+  .enablePlugins(CloudflowFlinkLibraryPlugin)
+  .settings(commonSettings)
+  .settings(
+    name := "payment-windowing-flink",
+    libraryDependencies ++= Seq(
+      log4jApi,
+      log4jSlf4j,
+      log4jCore,
+      disruptor,
+      scalaTest
+    )
+  )
+  .dependsOn(datamodel)
+
+lazy val paymentCollectorSpark = appModule("payment-collector-spark")
+  .enablePlugins(CloudflowSparkLibraryPlugin)
+  .settings(commonSettings)
+  .settings(
+    name := "payment-collector-spark",
+    libraryDependencies ++= Seq(
+      log4jApi,
+      log4jSlf4j,
+      log4jCore,
+      disruptor,
+      scalaTest
+    )
+  )
+  .dependsOn(datamodel)
+
 
 lazy val datamodel = appModule("datamodel")
   .enablePlugins(CloudflowLibraryPlugin)

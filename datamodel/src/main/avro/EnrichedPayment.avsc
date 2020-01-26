@@ -1,0 +1,18 @@
+{
+    "namespace": "ru.neoflex.cloudflow.training.vtb",
+    "type": "record",
+    "name": "EnrichedPayment",
+    "doc": "Enriched payment data",
+    "fields": [
+        {
+            "name": "calculatedAmount",
+            "type": "int",
+            "doc": "The payment amount"
+        },
+        {
+            "name": "payerId",
+            "type": "string",
+            "doc": "Payer identification string"
+        }
+    ]
+}

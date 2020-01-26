@@ -1,0 +1,23 @@
+{
+    "namespace": "ru.neoflex.cloudflow.training.vtb",
+    "type": "record",
+    "name": "Payment",
+    "doc": "Incoming payment data",
+    "fields": [
+        {
+            "name": "amount",
+            "type": "int",
+            "doc": "The payment amount"
+        },
+        {
+            "name": "payerId",
+            "type": "string",
+            "doc": "Payer identification string"
+        },
+        {
+            "name": "countryTo",
+            "type": "string",
+            "doc": "Destination country id"
+        }
+    ]
+}
