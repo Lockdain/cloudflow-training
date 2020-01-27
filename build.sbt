@@ -8,6 +8,7 @@ val log4jSlf4j       = "org.apache.logging.log4j" % "log4j-slf4j-impl" % log4j2V
 val log4jCore        = "org.apache.logging.log4j" % "log4j-core" % log4j2Version
 val disruptor        = "com.lmax" % "disruptor" % "3.4.2" // for async log4j2
 val scalaTest        = "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+val log4j            = "ch.qos.logback" % "logback-classic" % "1.2.3"
 
 
 lazy val root =

@@ -6,13 +6,13 @@
 {"amount":202855,"payerId":"Kline","countryTo":"Falkland Islands (Malvinas)"}
 {"amount":247369,"payerId":"Pacheco","countryTo":"Korea (South)"}
 {"amount":45619,"payerId":"Stanley","countryTo":"Canada"}
-{"amount":69728,"payerId":"Pugh","countryTo":"Turkey"}
+{"amount":69728,"payerId":"","countryTo":"Turkey"}
 {"amount":-141970,"payerId":"Wilkinson","countryTo":"Korea (North)"}
 {"amount":179244,"payerId":"Crane","countryTo":"Antarctica"}
 {"amount":238491,"payerId":"Kramer","countryTo":"Antigua and Barbuda"}
 {"amount":31781,"payerId":"Hickman","countryTo":"Congo"}
 {"amount":113400,"payerId":"Conner","countryTo":"Pakistan"}
-{"amount":11635,"payerId":"Patton","countryTo":"Taiwan"}
+{"amount":11635,"payerId":"","countryTo":"Taiwan"}
 {"amount":156869,"payerId":"Johnson","countryTo":"Armenia"}
 {"amount":136772,"payerId":"Clay","countryTo":"Greenland"}
 {"amount":158620,"payerId":"Greer","countryTo":"Kenya"}
@@ -32,7 +32,7 @@
 {"amount":84823,"payerId":"Graham","countryTo":"Russian Federation"}
 {"amount":-10421,"payerId":"Erickson","countryTo":"Germany"}
 {"amount":216608,"payerId":"Duffy","countryTo":"Sri Lanka"}
-{"amount":244935,"payerId":"Wolf","countryTo":"Thailand"}
+{"amount":244935,"payerId":"","countryTo":"Thailand"}
 {"amount":224707,"payerId":"Cote","countryTo":"Zimbabwe"}
 {"amount":52386,"payerId":"Knapp","countryTo":"Samoa"}
 {"amount":99620,"payerId":"Cotton","countryTo":"Montserrat"}
@@ -58,7 +58,7 @@
 {"amount":189516,"payerId":"Mccormick","countryTo":"Pitcairn"}
 {"amount":241280,"payerId":"Mcdaniel","countryTo":"Senegal"}
 {"amount":115218,"payerId":"Smith","countryTo":"Zaire"}
-{"amount":167621,"payerId":"Harmon","countryTo":"Nicaragua"}
+{"amount":167621,"payerId":"Smith","countryTo":"Nicaragua"}
 {"amount":73280,"payerId":"Leon","countryTo":"Lithuania"}
 {"amount":182817,"payerId":"Benton","countryTo":"Uruguay"}
 {"amount":106953,"payerId":"Holden","countryTo":"Gibraltar"}
@@ -66,7 +66,7 @@
 {"amount":27133,"payerId":"Hogan","countryTo":"Liechtenstein"}
 {"amount":5034,"payerId":"Bean","countryTo":"Angola"}
 {"amount":45555,"payerId":"Poole","countryTo":"Virgin Islands (British)"}
-{"amount":177770,"payerId":"Long","countryTo":"Belize"}
+{"amount":177770,"payerId":"Long","countryTo":"Tunisia"}
 {"amount":131296,"payerId":"Ramsey","countryTo":"Faroe Islands"}
 {"amount":13376,"payerId":"Shields","countryTo":"Cape Verde"}
 {"amount":122655,"payerId":"Sargent","countryTo":"Moldova"}
@@ -76,7 +76,7 @@
 {"amount":149056,"payerId":"Conway","countryTo":"Chile"}
 {"amount":146171,"payerId":"Donovan","countryTo":"Macedonia"}
 {"amount":167214,"payerId":"Morin","countryTo":"Palau"}
-{"amount":63983,"payerId":"Fox","countryTo":"Sao Tome and Principe"}
+{"amount":63983,"payerId":"Smith","countryTo":"Sao Tome and Principe"}
 {"amount":64651,"payerId":"Middleton","countryTo":"Madagascar"}
 {"amount":10101,"payerId":"Myers","countryTo":"India"}
 {"amount":97300,"payerId":"Dudley","countryTo":"Kyrgyzstan"}

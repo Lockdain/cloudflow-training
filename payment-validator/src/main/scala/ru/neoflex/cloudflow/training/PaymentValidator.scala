@@ -18,7 +18,7 @@ class PaymentValidator extends AkkaStreamlet{
     override def flow: FlowWithOffsetContext[Payment, Either[Payment, Payment]] =
       flowWithOffsetContext()
       .map { payment =>
-        if (payment.amount < 0 || payment.payerId.isEmpty || "Tunisia".equals(payment.countryTo))
+        if (payment.amount <= 0 || payment.payerId.isEmpty || "Tunisia".equals(payment.countryTo))
           Left(payment)
         else Right(payment)
       }
