@@ -5,7 +5,7 @@ functionality of Lightbend Cloudflow framework.
 It can be used as a basis for the further experiments 
 and discovery.
 
-##### How to build
+###### How to build
 
 A simplest way to build the project is to open it 
 in Intellij IDEA, proceed to the `sbt-shell` window and 
